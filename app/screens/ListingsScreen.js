@@ -20,7 +20,7 @@ const listings = [
   },
 ];
 
-function ListingsScreen(props) {
+function ListingsScreen() {
   return (
     <Screen style={styles.screen}>
       <FlatList
