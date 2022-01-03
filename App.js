@@ -1,19 +1,29 @@
-import React from "react";
-import { Button, Text } from "react-native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import React from 'react';
+import { Button, Text } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import AccountScreen from "./app/screens/AccountScreen";
-import ListingsScreen from "./app/screens/ListingsScreen";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
+import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
-import Icon from "./app/components/Icon";
-import defaultStyles from "./app/config/colors";
-import AuthNavigator from "./app/navigation/AuthNavigator";
+import Icon from './app/components/Icon';
+import defaultStyles from './app/config/colors';
 
+import AuthNavigator from './app/navigation/AuthNavigator';
+import AppNavigator from './app/navigation/AppNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
+
+export default function App() {
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  );
+}
 // const Tab = createBottomTabNavigator();
 // const BottomTabNavigator = () => (
 //   <Tab.Navigator>
@@ -67,14 +77,6 @@ import AuthNavigator from "./app/navigation/AuthNavigator";
 //     />
 //   </Tab.Navigator>
 // );
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
-  );
-}
 // const Link = () => {
 //   const navigation = useNavigation();
 
